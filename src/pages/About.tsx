@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ExternalLink, Shield, Clock, Lock, Star, Users, Sparkles, MessageSquare } from "lucide-react";
+import { CheckCircle, ExternalLink, Shield, Clock, Lock, Star, Users, Sparkles, MessageSquare, BookOpen, Pencil, Recycle } from "lucide-react";
 
 const AboutPage = () => {
   return (
@@ -14,9 +14,9 @@ const AboutPage = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-purple-100 text-purple-600 hover:bg-purple-100 py-1">About Us</Badge>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Reimagining the Electronics Resale Experience</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Reimagining University Stationery Exchange</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ResellSmart is on a mission to create a safer, smarter marketplace for buying and selling pre-owned electronics
+            ReSell is on a mission to create a sustainable, affordable marketplace for buying and selling second-hand stationery, books, and academic materials among university students.
           </p>
         </div>
         
@@ -27,20 +27,20 @@ const AboutPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Our Story</h2>
                 <p className="text-gray-600 mb-4">
-                  Founded in 2023, ResellSmart was born from a simple frustration: the risks and uncertainties of buying and selling used electronics online.
+                  Founded in 2023, ReSell emerged from a simple observation: university students often discard perfectly usable stationery, textbooks, and academic materials at the end of each semester.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  After experiencing scams and misleading listings firsthand, our team set out to create a platform that uses advanced technology to remove the guesswork from electronics reselling.
+                  After witnessing this waste firsthand, our team of university graduates set out to create a platform that connects students looking to buy affordable supplies with those wanting to recoup some of their investment in academic materials.
                 </p>
                 <p className="text-gray-600">
-                  Today, we're building the most trusted marketplace for pre-owned technology, combining AI-powered tools with robust buyer and seller protections to ensure everyone can trade with confidence.
+                  Today, we're building the most trusted university marketplace for academic supplies, combining AI-powered tools with robust buyer and seller protections to ensure everyone can trade with confidence within their university ecosystem.
                 </p>
               </div>
               <div className="bg-purple-50 rounded-lg p-8 flex items-center justify-center">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-2">Our Vision</h3>
                   <p className="text-gray-600 italic">
-                    "To create a world where the resale of electronics is as reliable, transparent, and trusted as buying new, but with the affordability and sustainability benefits of the secondary market."
+                    "To reduce waste and make education more affordable by creating a trusted, university-based marketplace where students can easily buy and sell second-hand academic materials."
                   </p>
                 </div>
               </div>
@@ -53,7 +53,7 @@ const AboutPage = () => {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">What Makes Us Different</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our platform combines cutting-edge technology with user-centric features to create a uniquely safe and efficient marketplace
+              Our platform combines cutting-edge technology with student-centric features to create a uniquely safe and efficient marketplace
             </p>
           </div>
           
@@ -61,32 +61,32 @@ const AboutPage = () => {
             <FeatureCard
               icon={<Sparkles className="h-10 w-10 text-purple-600" />}
               title="AI Price Prediction"
-              description="Get accurate market value estimates for any device based on real-time data and comparables"
+              description="Get accurate market value estimates for your stationery and books based on condition, demand, and campus trends"
             />
             <FeatureCard
               icon={<Shield className="h-10 w-10 text-purple-600" />}
               title="Fraud Detection"
-              description="Our AI system analyzes listings for red flags and suspicious patterns to protect buyers"
+              description="Our AI system analyzes listings for red flags and suspicious patterns to protect university buyers"
             />
             <FeatureCard
               icon={<Lock className="h-10 w-10 text-purple-600" />}
               title="Secure Escrow"
-              description="Payments are held safely until buyers receive and approve their purchases"
+              description="Payments are held safely until buyers receive and approve their academic purchases"
             />
             <FeatureCard
               icon={<MessageSquare className="h-10 w-10 text-purple-600" />}
-              title="Integrated Messaging"
-              description="Communicate directly with buyers and sellers within our secure platform"
+              title="Campus Messaging"
+              description="Communicate directly with fellow students within our secure platform"
             />
             <FeatureCard
-              icon={<Clock className="h-10 w-10 text-purple-600" />}
-              title="Streamlined Process"
-              description="List items in minutes with our guided setup and AI-assisted descriptions"
+              icon={<BookOpen className="h-10 w-10 text-purple-600" />}
+              title="University Filtering"
+              description="Find materials specific to your university and courses for perfect relevance"
             />
             <FeatureCard
               icon={<Users className="h-10 w-10 text-purple-600" />}
               title="Verified Profiles"
-              description="Know who you're dealing with through our comprehensive verification system"
+              description="Know you're dealing with real students through our comprehensive verification system"
             />
           </div>
         </div>
@@ -94,9 +94,9 @@ const AboutPage = () => {
         {/* How It Works */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">How ResellSmart Works</h2>
+            <h2 className="text-3xl font-bold mb-4">How ReSell Works</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our platform simplifies every step of buying and selling pre-owned electronics
+              Our platform simplifies buying and selling academic materials between university students
             </p>
           </div>
           
@@ -108,22 +108,22 @@ const AboutPage = () => {
               <ProcessStep
                 number={1}
                 title="List or Browse"
-                description="Create detailed listings with AI assistance or browse verified products"
+                description="Create detailed listings with AI assistance or browse verified academic products"
               />
               <ProcessStep
                 number={2}
-                title="Connect Securely"
-                description="Communicate through our platform's encrypted messaging system"
+                title="Connect On-Campus"
+                description="Communicate with fellow students through our platform's encrypted messaging"
               />
               <ProcessStep
                 number={3}
-                title="Payment & Shipping"
-                description="Funds are secured in escrow while item is shipped and delivered"
+                title="Payment & Exchange"
+                description="Funds are secured in escrow while items are exchanged on campus"
               />
               <ProcessStep
                 number={4}
                 title="Verify & Complete"
-                description="Buyer inspects the item and releases payment when satisfied"
+                description="Buyer inspects the stationery or books and releases payment when satisfied"
               />
             </div>
           </div>
@@ -132,26 +132,26 @@ const AboutPage = () => {
         {/* Testimonials */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">What Users Say</h2>
+            <h2 className="text-3xl font-bold mb-4">What Students Say</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <TestimonialCard
-              quote="The AI price prediction tool saved me from undervaluing my MacBook by nearly $300. I couldn't believe how accurate it was!"
-              author="Michael T."
-              role="Seller"
+              quote="I saved over $200 on textbooks this semester using ReSell. The verification system made me feel safe buying from seniors."
+              author="Priya M."
+              role="Freshman, Engineering"
               rating={5}
             />
             <TestimonialCard
-              quote="The fraud detection system warned me about a suspicious listing that seemed perfect otherwise. That feature alone is worth using ResellSmart."
-              author="Sarah K."
-              role="Buyer"
+              quote="As a graduating senior, I recovered almost 40% of what I spent on art supplies by selling them to underclassmen through ReSell."
+              author="James K."
+              role="Senior, Fine Arts"
               rating={5}
             />
             <TestimonialCard
-              quote="I was nervous about selling my expensive camera gear online, but the escrow system gave me total peace of mind. Simple and secure."
-              author="David L."
-              role="Seller"
+              quote="The university-specific filtering helped me find exactly the right edition of textbooks for my courses. Super convenient!"
+              author="Emma L."
+              role="Sophomore, Business"
               rating={4}
             />
           </div>
@@ -165,20 +165,20 @@ const AboutPage = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">10K+</div>
-              <div className="text-gray-600">Active Users</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">15K+</div>
+              <div className="text-gray-600">Student Users</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">25K+</div>
-              <div className="text-gray-600">Successful Transactions</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">35K+</div>
+              <div className="text-gray-600">Successful Exchanges</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">98%</div>
-              <div className="text-gray-600">Satisfaction Rate</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">$850K+</div>
+              <div className="text-gray-600">Student Savings</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">$2.5M+</div>
-              <div className="text-gray-600">Marketplace Volume</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">25+</div>
+              <div className="text-gray-600">University Networks</div>
             </div>
           </div>
         </div>
@@ -188,30 +188,30 @@ const AboutPage = () => {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              We're a diverse team of technologists, marketplace experts, and customer champions
+              We're a team of former students passionate about sustainability and education affordability
             </p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <TeamMember
-              name="Alex Rivera"
+              name="Nina Patel"
               title="Founder & CEO"
-              bio="Former marketplace product leader with a passion for consumer trust and security"
+              bio="Former student government president with passion for campus sustainability"
             />
             <TeamMember
-              name="Priya Sharma"
+              name="Jason Wong"
               title="CTO"
-              bio="AI and machine learning specialist with expertise in fraud detection systems"
+              bio="Computer science graduate specialized in marketplace algorithms and security"
             />
             <TeamMember
-              name="Marcus Johnson"
-              title="Head of Product"
-              bio="User experience advocate focused on making complex technology accessible"
+              name="Taylor Reed"
+              title="Head of Student Relations"
+              bio="Education advocate focused on making academic resources more affordable"
             />
             <TeamMember
-              name="Sarah Chen"
+              name="Aisha Johnson"
               title="Head of Trust & Safety"
-              bio="E-commerce security expert dedicated to creating safer online marketplaces"
+              bio="Campus security expert dedicated to creating safer student marketplaces"
             />
           </div>
         </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
         <div className="text-center bg-purple-600 text-white rounded-xl p-10 mb-16">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join thousands of users already buying and selling electronics with confidence on ResellSmart
+            Join thousands of students already buying and selling academic materials with confidence on ReSell
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" variant="secondary" asChild>
@@ -240,20 +240,20 @@ const AboutPage = () => {
           
           <div className="space-y-4">
             <FAQItem
-              question="How does the escrow system work?"
-              answer="When a buyer makes a purchase, their payment is securely held by ResellSmart until they receive and approve the item. This protects both parties - sellers know the buyer has committed funds, and buyers know they can get their money back if the item isn't as described."
+              question="How does the university verification work?"
+              answer="We verify users through their university email addresses. This ensures that only current students or faculty can access the platform, creating a safe and trusted community for exchanging academic materials."
             />
             <FAQItem
-              question="What fees does ResellSmart charge?"
-              answer="Buyers pay no fees. Sellers pay a 5% fee on successful transactions, which includes payment processing, escrow protection, and access to our AI tools. Premium features like enhanced verification may have additional costs."
+              question="What fees does ReSell charge?"
+              answer="Buyers pay no fees. Sellers pay a 5% fee on successful transactions, which includes payment processing, escrow protection, and access to our AI pricing tools. This is significantly less than the depreciation you'd face if you tried to resell to bookstores."
             />
             <FAQItem
               question="How accurate is the AI price prediction?"
-              answer="Our AI price prediction tool is typically within 5-10% of actual selling prices, based on analysis of thousands of similar transactions, current market trends, and device-specific factors. The more information you provide, the more accurate the estimate."
+              answer="Our AI price prediction tool analyzes current campus demand, the condition of the item, original retail price, and historical sale data to suggest optimal pricing. For textbooks and common supplies, it's typically within 10-15% of final selling prices."
             />
             <FAQItem
-              question="What happens if I receive an item that doesn't match the description?"
-              answer="Our buyer protection allows you to report issues within 48 hours of delivery. If the item significantly differs from its description, you can request a return and refund through our resolution center."
+              question="What happens if I receive damaged stationery or the wrong textbook edition?"
+              answer="Our buyer protection allows you to report issues within 48 hours of meeting and receiving the item. If the academic materials significantly differ from their description, you can request a return and refund through our resolution center."
             />
           </div>
         </div>
@@ -267,10 +267,10 @@ const AboutPage = () => {
             Have questions or feedback? We'd love to hear from you.
           </p>
           <p className="text-gray-600">
-            <strong>Email:</strong> support@resellsmart.com
+            <strong>Email:</strong> support@resell.edu
           </p>
           <p className="text-gray-600">
-            <strong>Phone:</strong> +1 (555) 123-4567
+            <strong>Phone:</strong> +1 (555) 234-5678
           </p>
         </div>
       </div>

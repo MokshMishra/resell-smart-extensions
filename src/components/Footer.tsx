@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">ResellSmart</h3>
+            <h3 className="text-lg font-semibold mb-4">ReSell</h3>
             <p className="text-gray-600 max-w-xs">
-              Your trusted marketplace for buying and selling pre-owned and refurbished electronics.
+              Your trusted university marketplace for buying and selling second-hand stationery, books, and academic materials.
             </p>
           </div>
           
@@ -55,15 +55,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>Email: support@resellsmart.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Market St, San Francisco, CA</li>
+              <li>Email: support@resell.edu</li>
+              <li>Phone: +1 (555) 234-5678</li>
+              <li>Address: University Campus Mall, Box #247</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-200 mt-8 pt-6 text-center text-gray-600">
-          <p>&copy; {new Date().getFullYear()} ResellSmart. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ReSell. All rights reserved.</p>
         </div>
       </div>
     </footer>
