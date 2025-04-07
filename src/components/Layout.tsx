@@ -1,17 +1,20 @@
 
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = () => {
+  const location = useLocation();
+  const isUseCaseDiagram = location.pathname === "/use-case-diagram";
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      {!isUseCaseDiagram && <Navbar />}
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer />
+      {!isUseCaseDiagram && <Footer />}
     </div>
   );
 };

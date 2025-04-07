@@ -15,6 +15,7 @@ import OrderManagement from "./pages/OrderManagement";
 import PricePrediction from "./pages/PricePrediction";
 import About from "./pages/About";
 import Layout from "./components/Layout";
+import UseCaseDiagram from "./components/UseCaseDiagram";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="orders" element={<OrderManagement />} />
             <Route path="price-prediction" element={<PricePrediction />} />
             <Route path="about" element={<About />} />
+            <Route path="use-case-diagram" element={<UseCaseDiagram />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
