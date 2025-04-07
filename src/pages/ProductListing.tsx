@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -14,74 +13,80 @@ import { Link } from "react-router-dom";
 const mockProducts = [
   {
     id: 1,
-    title: "iPhone 13 Pro Max - 256GB",
-    category: "Smartphones",
-    condition: "Like New",
-    price: 899,
-    originalPrice: 1099,
+    title: "Statistics Textbook - 5th Edition",
+    category: "Books",
+    condition: "Good",
+    price: 25,
+    originalPrice: 45,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1581795669633-91ef7c9699a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "TechTreasures",
+    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "BookWorm101",
+    university: "Stanford University",
     verified: true,
   },
   {
     id: 2,
-    title: "MacBook Pro 16\" - M1 Pro",
-    category: "Laptops",
-    condition: "Good",
-    price: 1799,
-    originalPrice: 2399,
+    title: "Scientific Calculator - Casio FX-991EX",
+    category: "Calculators",
+    condition: "Like New",
+    price: 15,
+    originalPrice: 22,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "AppleReseller",
+    image: "https://images.unsplash.com/photo-1564223288351-a96944ffc595?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "MathGenius",
+    university: "MIT",
     verified: true,
   },
   {
     id: 3,
-    title: "Samsung Galaxy Tab S8 Ultra",
-    category: "Tablets",
+    title: "Parker Fountain Pen Set",
+    category: "Writing Instruments",
     condition: "Excellent",
-    price: 649,
-    originalPrice: 899,
+    price: 18,
+    originalPrice: 30,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1623126908029-58cb08a2b272?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "GalaxyGear",
+    image: "https://images.unsplash.com/photo-1583485088034-697b5bc1b937?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "PenEnthusiast",
+    university: "Harvard University",
     verified: false,
   },
   {
     id: 4,
-    title: "Sony WH-1000XM4 Headphones",
-    category: "Audio",
-    condition: "Like New",
-    price: 249,
-    originalPrice: 349,
+    title: "Leather Notebook - Ruled 200 pages",
+    category: "Notebooks",
+    condition: "Good",
+    price: 12,
+    originalPrice: 20,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "AudioPhile",
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "NotesTaker",
+    university: "Oxford University",
     verified: true,
   },
   {
     id: 5,
-    title: "Nintendo Switch OLED",
-    category: "Gaming",
-    condition: "Good",
-    price: 299,
-    originalPrice: 349,
+    title: "Highlighter Set - 12 Colors",
+    category: "Markers",
+    condition: "New",
+    price: 8,
+    originalPrice: 15,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "GameStation",
+    image: "https://images.unsplash.com/photo-1581682543291-cfd9daaeccc9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "ColorCreator",
+    university: "Cambridge University",
     verified: true,
   },
   {
     id: 6,
-    title: "Canon EOS R5 Camera",
-    category: "Cameras",
-    condition: "Excellent",
-    price: 2899,
-    originalPrice: 3899,
+    title: "Engineering Drawing Tools Set",
+    category: "Art Supplies",
+    condition: "Good",
+    price: 22,
+    originalPrice: 40,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    seller: "PhotoPro",
+    image: "https://images.unsplash.com/photo-1601815581002-3d5da98d5100?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    seller: "ArchStudent",
+    university: "California Institute of Technology",
     verified: false,
   }
 ];
@@ -126,14 +131,13 @@ const ProductCard = ({ product }: { product: typeof mockProducts[0] }) => {
             <span>{product.rating}</span>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-sm">
-          <span className="text-gray-600">Seller:</span>
-          <span className="font-medium flex items-center">
-            {product.seller}
+        <div className="flex flex-col gap-1 text-sm">
+          <span className="text-gray-600">Seller: <span className="font-medium">{product.seller}</span>
             {product.verified && (
               <Badge className="ml-1 h-4 px-1 bg-green-500">✓</Badge>
             )}
           </span>
+          <span className="text-gray-600">University: <span className="font-medium">{product.university}</span></span>
         </div>
       </CardContent>
       <CardFooter className="pt-2 pb-4 px-4 border-t mt-auto">
@@ -152,20 +156,20 @@ const ProductCard = ({ product }: { product: typeof mockProducts[0] }) => {
 };
 
 const ProductListing = () => {
-  const [priceRange, setPriceRange] = useState([0, 5000]);
+  const [priceRange, setPriceRange] = useState([0, 100]);
   const [showFilters, setShowFilters] = useState(false);
 
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col md:flex-row gap-6 mb-8">
         <div className="w-full md:w-2/3">
-          <h1 className="text-3xl font-bold mb-2">Browse Products</h1>
-          <p className="text-gray-600 mb-6">Find quality pre-owned electronics at great prices</p>
+          <h1 className="text-3xl font-bold mb-2">Browse Academic Materials</h1>
+          <p className="text-gray-600 mb-6">Find quality second-hand stationery and academic supplies at great prices</p>
         
           <div className="relative mb-6">
             <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <Input 
-              placeholder="Search for products, brands, or categories..." 
+              placeholder="Search for books, stationery, or academic supplies..." 
               className="pl-10 pr-10"
             />
             <Button 
@@ -180,11 +184,11 @@ const ProductListing = () => {
           
           <Tabs defaultValue="all" className="mb-6">
             <TabsList>
-              <TabsTrigger value="all">All Products</TabsTrigger>
-              <TabsTrigger value="smartphones">Smartphones</TabsTrigger>
-              <TabsTrigger value="laptops">Laptops</TabsTrigger>
-              <TabsTrigger value="tablets">Tablets</TabsTrigger>
-              <TabsTrigger value="audio">Audio</TabsTrigger>
+              <TabsTrigger value="all">All Items</TabsTrigger>
+              <TabsTrigger value="books">Books</TabsTrigger>
+              <TabsTrigger value="stationery">Stationery</TabsTrigger>
+              <TabsTrigger value="calculators">Calculators</TabsTrigger>
+              <TabsTrigger value="art">Art Supplies</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -215,12 +219,12 @@ const ProductListing = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Categories</SelectItem>
-                    <SelectItem value="smartphones">Smartphones</SelectItem>
-                    <SelectItem value="laptops">Laptops</SelectItem>
-                    <SelectItem value="tablets">Tablets</SelectItem>
-                    <SelectItem value="audio">Audio</SelectItem>
-                    <SelectItem value="gaming">Gaming</SelectItem>
-                    <SelectItem value="cameras">Cameras</SelectItem>
+                    <SelectItem value="books">Books</SelectItem>
+                    <SelectItem value="stationery">Stationery</SelectItem>
+                    <SelectItem value="calculators">Calculators</SelectItem>
+                    <SelectItem value="notebooks">Notebooks</SelectItem>
+                    <SelectItem value="pens">Writing Instruments</SelectItem>
+                    <SelectItem value="art">Art Supplies</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -228,10 +232,10 @@ const ProductListing = () => {
               <div className="space-y-2">
                 <Label className="text-sm font-medium">Condition</Label>
                 <div className="grid grid-cols-2 gap-2">
+                  <Button variant="outline" size="sm" className="justify-start">New</Button>
                   <Button variant="outline" size="sm" className="justify-start">Like New</Button>
-                  <Button variant="outline" size="sm" className="justify-start">Excellent</Button>
                   <Button variant="outline" size="sm" className="justify-start">Good</Button>
-                  <Button variant="outline" size="sm" className="justify-start">Fair</Button>
+                  <Button variant="outline" size="sm" className="justify-start">Used</Button>
                 </div>
               </div>
               
@@ -243,12 +247,28 @@ const ProductListing = () => {
                   </span>
                 </div>
                 <Slider
-                  defaultValue={[0, 5000]}
-                  max={5000}
-                  step={100}
+                  defaultValue={[0, 100]}
+                  max={100}
+                  step={5}
                   onValueChange={(value) => setPriceRange(value)}
                   className="py-4"
                 />
+              </div>
+              
+              <div className="space-y-2">
+                <Label className="text-sm font-medium">University</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="All Universities" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Universities</SelectItem>
+                    <SelectItem value="stanford">Stanford University</SelectItem>
+                    <SelectItem value="mit">MIT</SelectItem>
+                    <SelectItem value="harvard">Harvard University</SelectItem>
+                    <SelectItem value="oxford">Oxford University</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <div className="space-y-2">
@@ -261,22 +281,6 @@ const ProductListing = () => {
                     <SelectItem value="any">Any Rating</SelectItem>
                     <SelectItem value="4plus">4+ Stars</SelectItem>
                     <SelectItem value="3plus">3+ Stars</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              <div className="space-y-2">
-                <Label className="text-sm font-medium">Brand</Label>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="All Brands" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Brands</SelectItem>
-                    <SelectItem value="apple">Apple</SelectItem>
-                    <SelectItem value="samsung">Samsung</SelectItem>
-                    <SelectItem value="sony">Sony</SelectItem>
-                    <SelectItem value="microsoft">Microsoft</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

@@ -17,7 +17,7 @@ const Auth = () => {
     e.preventDefault();
     toast({
       title: "Sign in successful",
-      description: "Welcome back to ResellSmart!",
+      description: "Welcome back to ReSell!",
     });
     // In a real app, this would include authentication logic
   };
@@ -55,7 +55,7 @@ const Auth = () => {
                     <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                     <Input
                       id="signin-email"
-                      placeholder="name@example.com"
+                      placeholder="name@university.edu"
                       type="email"
                       required
                       className="pl-10"
@@ -109,7 +109,7 @@ const Auth = () => {
             <CardHeader>
               <CardTitle>Sign Up</CardTitle>
               <CardDescription>
-                Create an account to start buying and selling on ResellSmart.
+                Create an account to start buying and selling academic supplies on ReSell.
               </CardDescription>
             </CardHeader>
             <form onSubmit={handleSignUp}>
@@ -127,17 +127,18 @@ const Auth = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="signup-email">Email</Label>
+                  <Label htmlFor="signup-email">University Email</Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                     <Input
                       id="signup-email"
-                      placeholder="name@example.com"
+                      placeholder="name@university.edu"
                       type="email"
                       required
                       className="pl-10"
                     />
                   </div>
+                  <p className="text-xs text-gray-500">Please use your university email for verification.</p>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="signup-password">Password</Label>
@@ -174,6 +175,15 @@ const Auth = () => {
                       className="pl-10 pr-10"
                     />
                   </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="signup-university">University</Label>
+                  <Input
+                    id="signup-university"
+                    placeholder="E.g., Stanford University"
+                    required
+                    className="pl-3"
+                  />
                 </div>
               </CardContent>
               <CardFooter>

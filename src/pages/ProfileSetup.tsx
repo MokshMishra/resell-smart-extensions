@@ -38,9 +38,9 @@ const ProfileSetup = () => {
     <div className="container mx-auto py-10 px-4 max-w-3xl">
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Complete Your Profile</CardTitle>
+          <CardTitle className="text-2xl">Complete Your Academic Profile</CardTitle>
           <CardDescription>
-            Tell us more about yourself to enhance your ResellSmart experience
+            Tell us more about yourself to enhance your ReSell experience
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -72,32 +72,51 @@ const ProfileSetup = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="first-name">First Name</Label>
-                <Input id="first-name" required />
+                <Label htmlFor="university">University</Label>
+                <Input id="university" placeholder="E.g., Stanford University" required />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="last-name">Last Name</Label>
-                <Input id="last-name" required />
+                <Label htmlFor="student-id">Student ID (Optional)</Label>
+                <Input id="student-id" placeholder="For verification purposes" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="major">Major/Course</Label>
+                <Input id="major" placeholder="E.g., Computer Science" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="year">Year of Study</Label>
+                <Select>
+                  <SelectTrigger id="year">
+                    <SelectValue placeholder="Select your year" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1st">1st Year</SelectItem>
+                    <SelectItem value="2nd">2nd Year</SelectItem>
+                    <SelectItem value="3rd">3rd Year</SelectItem>
+                    <SelectItem value="4th">4th Year</SelectItem>
+                    <SelectItem value="grad">Graduate</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                  <Input id="phone" className="pl-10" />
+                  <Input id="phone" className="pl-10" placeholder="For delivery coordination" />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
+                <Label htmlFor="location">Campus Location</Label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                  <Input id="location" className="pl-10" />
+                  <Input id="location" className="pl-10" placeholder="Dorm/Building for meetups" />
                 </div>
               </div>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="account-type">Account Type</Label>
-              <Select defaultValue="buyer">
+              <Select defaultValue="both">
                 <SelectTrigger>
                   <SelectValue placeholder="Select account type" />
                 </SelectTrigger>
@@ -119,6 +138,7 @@ const ProfileSetup = () => {
                   <SelectItem value="bank">Bank Transfer</SelectItem>
                   <SelectItem value="card">Credit/Debit Card</SelectItem>
                   <SelectItem value="paypal">PayPal</SelectItem>
+                  <SelectItem value="cash">Cash (In-person)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -127,13 +147,13 @@ const ProfileSetup = () => {
               <Label htmlFor="bio">Bio</Label>
               <Textarea
                 id="bio"
-                placeholder="Tell others a bit about yourself..."
+                placeholder="Tell others a bit about yourself, what you're studying, and what items you're looking for..."
                 className="min-h-[100px]"
               />
             </div>
 
             <div className="space-y-2">
-              <Label>Verification Documents</Label>
+              <Label>Student ID Verification (Optional)</Label>
               <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center">
                 <div className="flex flex-col items-center space-y-2">
                   <Upload className="h-8 w-8 text-gray-400" />
@@ -142,7 +162,7 @@ const ProfileSetup = () => {
                     drop
                   </div>
                   <p className="text-xs text-gray-500">
-                    SVG, PNG, JPG or PDF (max. 5MB)
+                    Upload your student ID to get verified seller status (personal info will be blurred)
                   </p>
                 </div>
                 <Input

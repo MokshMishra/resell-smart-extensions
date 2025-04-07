@@ -2,13 +2,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Users, Package, CreditCard, ShoppingBag, BarChart3, Info } from "lucide-react";
+import { ArrowRight, Users, Book, CreditCard, ShoppingBag, BarChart3, Info } from "lucide-react";
 
 const Index = () => {
   const pages = [
     {
       title: "Authentication & Profile Setup",
-      description: "Sign in, create an account, and set up your user profile",
+      description: "Sign in, create an account, and set up your university profile",
       icon: <Users className="h-6 w-6 text-purple-600" />,
       path: "/auth",
       secondaryPath: "/profile-setup",
@@ -16,8 +16,8 @@ const Index = () => {
     },
     {
       title: "Product Listing",
-      description: "Browse, search and filter through available products",
-      icon: <Package className="h-6 w-6 text-purple-600" />,
+      description: "Browse, search and filter through stationery and academic materials",
+      icon: <Book className="h-6 w-6 text-purple-600" />,
       path: "/products"
     },
     {
@@ -39,7 +39,7 @@ const Index = () => {
       path: "/price-prediction"
     },
     {
-      title: "About ResellSmart",
+      title: "About ReSell",
       description: "Learn more about our platform and mission",
       icon: <Info className="h-6 w-6 text-purple-600" />,
       path: "/about"
@@ -49,10 +49,10 @@ const Index = () => {
   return (
     <div className="container mx-auto py-10 px-4">
       <section className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to ResellSmart</h1>
+        <h1 className="text-4xl font-bold mb-4">Welcome to ReSell</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Your trusted marketplace for buying and selling pre-owned and refurbished electronics.
-          Intelligent pricing, secure transactions, and seamless experience.
+          Your trusted university marketplace for buying and selling second-hand stationery, books, and academic gadgets.
+          Intelligent pricing, secure transactions, and a seamless experience.
         </p>
       </section>
 

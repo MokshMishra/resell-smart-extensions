@@ -16,12 +16,13 @@ import { AlertCircle, CheckCircle, CreditCard, Shield, Lock } from "lucide-react
 // Mock product data
 const mockProduct = {
   id: "123456",
-  title: "iPhone 13 Pro Max - 256GB",
-  condition: "Like New",
-  price: 899,
-  seller: "TechTreasures",
+  title: "Statistics Textbook - 5th Edition",
+  condition: "Good",
+  price: 25,
+  seller: "BookWorm101",
   sellerRating: 4.8,
-  image: "https://images.unsplash.com/photo-1581795669633-91ef7c9699a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+  university: "Stanford University",
+  image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
 };
 
 const PaymentGateway = () => {
@@ -95,7 +96,7 @@ const PaymentGateway = () => {
         <div className="mb-8 text-center">
           <h1 className="text-2xl font-bold mb-2">Secure Purchase</h1>
           <p className="text-gray-600">
-            Your payment will be held in escrow until you've received and approved the item
+            Your payment will be held in escrow until you've received and approved the academic item
           </p>
         </div>
 
@@ -123,6 +124,9 @@ const PaymentGateway = () => {
                     <p className="text-sm text-gray-600 mt-1">
                       Seller: {mockProduct.seller} ({mockProduct.sellerRating}★)
                     </p>
+                    <p className="text-sm text-gray-600">
+                      University: {mockProduct.university}
+                    </p>
                   </div>
                 </div>
 
@@ -138,8 +142,8 @@ const PaymentGateway = () => {
                     <span>${(mockProduct.price * 0.05).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Shipping</span>
-                    <span>$0.00</span>
+                    <span className="text-gray-600">Delivery Method</span>
+                    <span>Campus Meetup</span>
                   </div>
                   <Separator className="my-2" />
                   <div className="flex justify-between font-bold">
@@ -193,18 +197,13 @@ const PaymentGateway = () => {
                             </svg>
                             PayPal
                           </TabsTrigger>
-                          <TabsTrigger value="bank-transfer">
+                          <TabsTrigger value="cash">
                             <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                              <rect x="2" y="5" width="20" height="14" rx="2" />
-                              <line x1="6" y1="9" x2="6" y2="9.01" />
-                              <line x1="10" y1="9" x2="10" y2="9.01" />
-                              <line x1="14" y1="9" x2="14" y2="9.01" />
-                              <line x1="18" y1="9" x2="18" y2="9.01" />
-                              <line x1="6" y1="13" x2="6" y2="13.01" />
-                              <line x1="18" y1="13" x2="18" y2="13.01" />
-                              <line x1="10" y1="13" x2="14" y2="13" />
+                              <rect x="2" y="6" width="20" height="12" rx="2" />
+                              <line x1="2" y1="12" x2="22" y2="12" />
+                              <line x1="12" y1="6" x2="12" y2="18" />
                             </svg>
-                            Bank Transfer
+                            Cash Meetup
                           </TabsTrigger>
                         </TabsList>
 
@@ -241,26 +240,52 @@ const PaymentGateway = () => {
                           </div>
                         </TabsContent>
 
-                        <TabsContent value="bank-transfer" className="space-y-4">
-                          <div>
-                            <Label htmlFor="bank-name">Bank Name</Label>
-                            <Input id="bank-name" placeholder="Enter your bank name" required />
-                          </div>
-                          <div>
-                            <Label htmlFor="account-name">Account Name</Label>
-                            <Input id="account-name" placeholder="Enter account name" required />
-                          </div>
-                          <div>
-                            <Label htmlFor="account-number">Account Number</Label>
-                            <Input id="account-number" placeholder="Enter account number" required />
+                        <TabsContent value="cash" className="space-y-4">
+                          <div className="py-6">
+                            <div className="text-center mb-4">
+                              <svg 
+                                className="mx-auto h-12 w-12 text-green-500" 
+                                fill="none" 
+                                viewBox="0 0 24 24" 
+                                stroke="currentColor" 
+                                strokeWidth="2"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                              <p className="mt-4 text-sm text-gray-600">
+                                Choose a campus meetup spot to exchange the item for cash payment.
+                              </p>
+                            </div>
+                            <div className="space-y-4">
+                              <div>
+                                <Label htmlFor="meetup-location">Preferred Campus Location</Label>
+                                <Select>
+                                  <SelectTrigger id="meetup-location">
+                                    <SelectValue placeholder="Select a location" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="library">Main Library</SelectItem>
+                                    <SelectItem value="union">Student Union</SelectItem>
+                                    <SelectItem value="cafe">Campus Café</SelectItem>
+                                    <SelectItem value="dorm">Dorm Lobby</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                              <div>
+                                <Label htmlFor="meetup-date">Preferred Date & Time</Label>
+                                <Input id="meetup-date" type="datetime-local" />
+                              </div>
+                            </div>
                           </div>
                         </TabsContent>
                       </Tabs>
 
-                      <div className="mt-4">
-                        <Label htmlFor="billing-address">Billing Address</Label>
-                        <Input id="billing-address" placeholder="123 Main St, City, Country" required className="mb-2" />
-                      </div>
+                      {paymentMethod !== "cash" && (
+                        <div className="mt-4">
+                          <Label htmlFor="billing-address">Billing Address</Label>
+                          <Input id="billing-address" placeholder="123 Main St, City, Country" required className="mb-2" />
+                        </div>
+                      )}
 
                       <div className="mt-6">
                         <div className="flex items-center space-x-2">
@@ -274,17 +299,31 @@ const PaymentGateway = () => {
                   ) : (
                     <div className="py-8 text-center">
                       <CheckCircle className="mx-auto h-16 w-16 text-green-500 mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Payment Secured in Escrow!</h3>
+                      <h3 className="text-xl font-semibold mb-2">Payment Secured{paymentMethod === "cash" ? " for Meetup" : " in Escrow"}!</h3>
                       <p className="text-gray-600 mb-6">
-                        Your payment is now securely held in our escrow system. It will only be released to the seller after you confirm receipt and approve the item.
+                        {paymentMethod === "cash" ? 
+                          "Your meetup has been scheduled. The seller has been notified and will confirm the location and time." :
+                          "Your payment is now securely held in our escrow system. It will only be released to the seller after you confirm receipt and approve the item."
+                        }
                       </p>
                       <div className="bg-blue-50 p-4 rounded-md text-sm text-left">
                         <p className="font-medium mb-2">What happens next?</p>
                         <ol className="space-y-2 list-decimal pl-5">
-                          <li>The seller will ship your item within 2 business days</li>
-                          <li>You'll receive shipping updates via email and on your order page</li>
-                          <li>Once delivered, you'll have 3 days to inspect the item</li>
-                          <li>After approval or 3 days with no issues reported, the funds are released</li>
+                          {paymentMethod === "cash" ? (
+                            <>
+                              <li>Meet the seller at the agreed location and time</li>
+                              <li>Inspect the item before making the cash payment</li>
+                              <li>Both you and the seller will mark the transaction as complete</li>
+                              <li>Don't forget to leave a review for the seller</li>
+                            </>
+                          ) : (
+                            <>
+                              <li>The seller will bring your item to the agreed location within 2 business days</li>
+                              <li>You'll receive meetup details via email and on your order page</li>
+                              <li>Once delivered, you'll have 3 days to inspect the item</li>
+                              <li>After approval or 3 days with no issues reported, the funds are released</li>
+                            </>
+                          )}
                         </ol>
                       </div>
                     </div>
@@ -297,7 +336,7 @@ const PaymentGateway = () => {
                       className="w-full bg-purple-600 hover:bg-purple-700"
                       disabled={!agreedToTerms}
                     >
-                      Secure Payment in Escrow
+                      {paymentMethod === "cash" ? "Schedule Meetup" : "Secure Payment in Escrow"}
                     </Button>
                   ) : (
                     <Button 
